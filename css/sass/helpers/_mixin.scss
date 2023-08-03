@@ -1,0 +1,59 @@
+@mixin file-hover {
+  color: $min-color;
+  background-color: #fafafa;
+}
+@mixin file-links {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: $min-color;
+  top: 0;
+  left: -100%;
+  transition: $min-transition;
+}
+@mixin pseudoElement {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+@mixin maintitleAnimation {
+  @include pseudoElement;
+  width: 12px;
+  height: 12px;
+  background-color: $min-color;
+  border-radius: 50%;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@mixin animation-main-title-half {
+  left: 0;
+  width: 12px;
+  height: 12px;
+}
+@mixin animation-main-title-total {
+  left: 0;
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+}
+@mixin main-padding {
+  position: relative;
+  padding: {
+    bottom: $min-card-padding;
+    top: $min-card-padding;
+  }
+}
+@mixin flexSystem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin background-color {
+  @include pseudoElement;
+  z-index: -1;
+}

@@ -1,0 +1,19 @@
+/*  Start Variabulse  */
+$min-color: #2196f3;
+$alt-color: #1787e0;
+$hover-color: #fafafa;
+$section-color: #ececec;
+$color-border: #e9d6d6;
+$paragraph-color: #777;
+$min-transition: 0.3s;
+$min-card-padding: 100px;
+$min-line-height: 1.7;
+$minSmall: "(min-width:768px)";
+$max-Small: "(max-width:767px)";
+$minMedium: "(min-width:992px)";
+$minLarge: "(min-width:1200px)";
+/*  End Variabulse  */
+:export {
+  white: $min-color;
+  // etc...
+}

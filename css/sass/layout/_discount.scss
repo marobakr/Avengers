@@ -1,0 +1,89 @@
+/* Start Discount */
+.discount {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  .image {
+    @media (max-width: 991px) {
+      flex-basis: 100%;
+    }
+    background-image: url(/imgs/discount-background1.jpg);
+    background-size: cover;
+    color: white;
+    flex-basis: 50%;
+    @include flexSystem;
+    position: relative;
+    z-index: 1;
+    animation: change-background 2s linear infinite;
+    &::before {
+      @include pseudoElement;
+      background-color: #357fb9f0;
+      z-index: -1;
+    }
+    .content {
+      h2 {
+        font-size: 40px;
+        letter-spacing: -2px;
+      }
+      p {
+        line-height: $min-line-height;
+        font-size: 18px;
+        max-width: 500px;
+      }
+      img {
+        width: 300px;
+        max-width: 100%;
+      }
+    }
+  }
+  .form {
+    @media (max-width: 991px) {
+      flex-basis: 100%;
+    }
+    @include flexSystem;
+    flex-basis: 50%;
+    .content {
+      .input {
+        display: block;
+        width: 100%;
+        margin-bottom: 25px;
+        padding: 15px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        background-color: #f9f9f9;
+        caret-color: $min-color;
+        &:focus {
+          outline: none;
+        }
+      }
+      textarea.input {
+        resize: none;
+        height: 200px;
+      }
+      input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background-color: $min-color;
+        color: white;
+        font : {
+          weight: bold;
+          size: 20px;
+        }
+        border: none;
+        cursor: pointer;
+        transition: $min-transition;
+        &:hover {
+          background-color: $section-color;
+        }
+      }
+    }
+  }
+  .content {
+    text-align: center;
+    padding: 0 20px;
+  }
+}
+// dispaly block => to span and input and a link
+/* End Discount */

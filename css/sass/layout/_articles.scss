@@ -1,0 +1,56 @@
+/* Start Aricles */
+.articles {
+  @include main-padding;
+
+  padding-top: 0;
+  .container {
+    @extend %container-drid-display;
+  }
+  .box {
+    box-shadow: 0 2px 15px #0000001a;
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: $min-transition, box-shadow $min-transition;
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 2px 15px #00000057;
+    }
+    .content {
+      padding: 20px;
+
+      h3 {
+        margin: 0;
+      }
+      p {
+        margin: 10px 0 0 0;
+        line-height: $min-line-height;
+        color: $paragraph-color;
+      }
+    }
+    .info {
+      padding: 20px;
+      border-top: 1px solid #e6e6e7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a {
+        color: $min-color;
+        font-weight: bold;
+      }
+      &:hover {
+        i {
+          animation: moving-arrow 0.6s linear infinite;
+        }
+      }
+      i {
+        color: $min-color;
+      }
+    }
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+/* End Aricles */

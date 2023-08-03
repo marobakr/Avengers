@@ -1,0 +1,116 @@
+.events {
+  @include main-padding;
+  .container {
+    @include flexSystem;
+    flex-wrap: wrap;
+    img {
+      max-width: 420px;
+    }
+    .info {
+      flex: 1;
+      .time {
+        @include flexSystem;
+        margin: 20px auto;
+        gap: 10px;
+
+        .unit {
+          border: 1px solid #d4d4d4;
+          border-radius: 6px;
+          text-align: center;
+          width: 75px;
+          transition: $min-transition;
+          &:hover {
+            border-color: $min-color;
+          }
+          span {
+            display: block;
+            transition: $min-transition;
+          }
+          span:first-child {
+            font: {
+              size: 25px;
+              weight: bold;
+            }
+            padding: 15px;
+            color: $min-color;
+          }
+          span:last-child {
+            padding: 8px 10px;
+            font-size: 13px;
+            border-top: 1px solid #d4d4d4;
+          }
+          &:hover {
+            span:last-child {
+              border-color: $min-color;
+            }
+          }
+        }
+      }
+      .title {
+        text-align: center;
+        margin: 40px 0 0;
+        font-size: 30px;
+      }
+      p.description {
+        text-align: center;
+        line-height: $min-line-height;
+        font-size: 19px;
+        color: $paragraph-color;
+      }
+    }
+    .subscribe {
+      width: 100%;
+      margin-top: 50px;
+      form {
+        @media #{$max-Small} {
+          max-width: 100%;
+          padding: 20px;
+          border-radius: 0;
+          flex-direction: column;
+        }
+        width: 600px;
+        margin: 20px auto;
+        padding: 30px 40px;
+        background-color: #f6f5f5;
+        border-radius: 50px;
+        display: flex;
+        gap: 20px;
+        input[type="email"] {
+          @media #{max-Small} {
+            border-radius: 0;
+          }
+          padding: 20px;
+          border-radius: 50px;
+          border: none;
+          flex: 1;
+          caret-color: $min-color;
+          outline: none;
+          &::placeholder {
+            transition: $min-transition;
+          }
+          &:focus {
+            &::placeholder {
+              opacity: 0;
+            }
+          }
+        }
+        input[type="submit"] {
+          @media #{max-Small} {
+            border-radius: 0;
+          }
+          border-radius: 50px;
+          border: none;
+          background-color: $min-color;
+          color: white;
+          font-weight: bold;
+          padding: 20px;
+          cursor: pointer;
+          transition: $min-transition;
+          &:hover {
+            background-color: $alt-color;
+          }
+        }
+      }
+    }
+  }
+}

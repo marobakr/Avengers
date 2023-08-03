@@ -1,0 +1,77 @@
+/* Start Stats */
+.stats {
+  @include main-padding;
+  background-image: url("/imgs/stats.jpg");
+  background-size: cover;
+  min-height: 300px;
+  position: relative;
+  &::before {
+    @include pseudoElement;
+    background-color: #ffffffe6;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 40px;
+    width: fit-content;
+    margin: 0 auto 50px;
+    position: relative;
+  }
+  .container {
+    @extend %container-drid-display;
+    .box {
+      background-color: white;
+      padding: 30px 15px;
+      text-align: center;
+      position: relative;
+      opacity: 0.8;
+      transition: $min-transition;
+      &::before {
+        top: 0;
+        right: 0;
+      }
+      &::after {
+        left: 0;
+        bottom: 0;
+      }
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        background-color: $min-color;
+        transition: $min-transition;
+        height: 0;
+      }
+      &:hover {
+        opacity: 1;
+        &::before,
+        &::after {
+          height: 100%;
+        }
+      }
+      i {
+        font-size: 25px;
+      }
+      .number {
+        display: block;
+        font : {
+          size: 50px;
+          weight: bold;
+        }
+        margin : {
+          top: 10px;
+          bottom: 10px;
+        }
+      }
+      .text {
+        color: $min-color;
+        font-style: italic;
+        font : {
+          size: 20px;
+          weight: bold;
+        }
+      }
+    }
+  }
+}
+/* End Stats */

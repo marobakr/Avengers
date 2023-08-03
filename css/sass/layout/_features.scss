@@ -1,0 +1,145 @@
+/* Start Features */
+.features {
+  @include main-padding;
+  background-color: white;
+  .container {
+    @extend %container-drid-display;
+    .box {
+      text-align: center;
+      border: 1px solid #cccccc;
+      overflow: hidden;
+      .img-holder {
+        position: relative;
+        &::before {
+          @include pseudoElement;
+        }
+        &::after {
+          @include pseudoElement;
+          bottom: 0;
+          right: 0;
+          left: auto;
+          top: auto;
+          width: auto;
+          height: auto;
+          border : {
+            style: solid;
+            width: 0px 0px 170px 500px;
+            color: transparent transparent white transparent;
+          }
+          transition: $min-transition;
+        }
+        img {
+          max-width: 100%;
+        }
+        &:hover {
+          &::after {
+            border-width: 0px 350px 170px 500px;
+          }
+        }
+      }
+      h2 {
+        position: relative;
+        font-size: 40px;
+        margin: auto;
+        width: fit-content;
+        &::after {
+          @include pseudoElement;
+          bottom: -15px;
+          left: 15px;
+          top: auto;
+          height: 5px;
+          width: calc(100% - 30px);
+          background-color: red;
+        }
+      }
+      p {
+        line-height: 2;
+        font-size: 20px;
+        margin: 30px 0;
+        padding: 25px;
+        color: $paragraph-color;
+      }
+      a {
+        display: block;
+        border: 1px solid red;
+        width: fit-content;
+        margin: 0 auto 30px;
+        border-radius: 6px;
+        transition: $min-transition;
+        font : {
+          weight: bold;
+          size: 22px;
+        }
+        padding: 10px 30px;
+        color: red;
+      }
+    }
+    .box:first-of-type {
+      .img-holder {
+        &::before {
+          background-color: #31978852;
+        }
+      }
+      h2 {
+        &:after {
+          background-color: #009688;
+        }
+      }
+      a {
+        color: #009688;
+        border-color: #009688;
+        background: linear-gradient(to right, #009688 50%, white 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+      }
+    }
+    .box-II {
+      .img-holder {
+        &::before {
+          background-color: #03a9fa52;
+        }
+      }
+      h2 {
+        &:after {
+          background-color: #03a9fa;
+        }
+      }
+      a {
+        color: #03a9fa;
+        border-color: #03a9fa;
+        background: linear-gradient(to right, #03a9fa 50%, white 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+      }
+    }
+    .box:last-of-type {
+      .img-holder {
+        &::before {
+          background-color: #f440365e;
+        }
+      }
+      h2 {
+        &:after {
+          background-color: #f44036;
+        }
+      }
+      a {
+        color: #f44036;
+        border-color: #f44036;
+        background: linear-gradient(to right, #f44036 50%, white 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+      }
+    }
+
+    .box {
+      &:hover {
+        a {
+          background-position: left bottom;
+          color: white;
+        }
+      }
+    }
+  }
+}
+/* End Features */

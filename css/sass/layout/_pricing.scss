@@ -1,0 +1,130 @@
+/* Start Pricing */
+.pricing {
+  @include main-padding;
+  background-color: $section-color;
+  .container {
+    @extend %container-drid-display;
+    .box {
+      position: relative;
+      //   box-shadow: 0 12px 20px 0 red, 0 2px 4px 0 #000.12;
+      background-color: white;
+      text-align: center;
+      z-index: 1;
+      transition: $min-transition;
+      &::before {
+        transition: $min-transition;
+        @include background-color;
+        width: 0;
+        height: 50%;
+        right: 0;
+        left: auto;
+        background-color: #f6f6f6;
+      }
+      &::after {
+        transition: $min-transition;
+        @include background-color;
+        width: 0;
+        height: 50%;
+        // or use bottom :0 => the bottom will started from 0 to top height 50%
+        top: 50%;
+        background-color: #f6f6f6;
+      }
+      &:hover {
+        &::after,
+        &::before {
+          width: 100%;
+        }
+      }
+      img {
+        width: 80px;
+        margin-bottom: 30px;
+      }
+      .title {
+        font : {
+          weight: bold;
+          size: 25px;
+        }
+        margin: 30px 0;
+        letter-spacing: -1px;
+        .price {
+          margin-bottom: 20px;
+          span.amount {
+            display: block;
+            font: {
+              size: 60px;
+              weight: bold;
+            }
+            margin-bottom: 5px;
+            color: $min-color;
+          }
+          span.time {
+            color: $paragraph-color;
+          }
+        }
+      }
+      ul {
+        text-align: left;
+        li {
+          padding: 20px;
+          border-top: 1px solid #eee;
+          &::before {
+            content: "\f00c";
+            font : {
+              family: "Font Awesome 5 Free";
+              weight: 900;
+            }
+            margin-right: 10px;
+            color: $min-color;
+          }
+        }
+      }
+      a {
+        display: block;
+        width: fit-content;
+        border: 2px solid $min-color;
+        color: $min-color;
+        margin: 30px auto 40px;
+        padding: 15px 20px;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: $min-transition;
+        &:hover {
+          background-color: $alt-color;
+          border-color: $alt-color;
+          color: white;
+        }
+      }
+    }
+    .popular {
+      @media #{$minLarge} {
+        top: -20px;
+      }
+      .label {
+        position: absolute;
+        // to flibe the text
+        writing-mode: vertical-rl;
+        background-color: $min-color;
+        color: white;
+        font : {
+          weight: bold;
+          size: 18px;
+        }
+        padding: 10px 10px 35px 10px;
+        right: 20px;
+        width: 40px;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          border : {
+            style: solid;
+            color: transparent transparent white;
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+/* End Pricing */

@@ -1,0 +1,68 @@
+/* Start Testimonials */
+.testimonials {
+  @include main-padding;
+  position: relative;
+  &::before {
+    @include background-color;
+    width: 50%;
+    background-color: $section-color;
+  }
+  &::after {
+    @include background-color;
+    right: 0;
+    left: auto;
+    width: 50%;
+    background-color: #677178;
+  }
+  .container {
+    @extend %container-drid-display;
+    .box {
+      padding: 20px;
+      background-color: white;
+      box-shadow: 6px 1px 4px 2px #97979757;
+      border-radius: 6px;
+      position: relative;
+      img {
+        position: absolute;
+        right: -10px;
+        top: -20px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 10px solid $section-color;
+      }
+      h3 {
+        margin: 0 0 10px;
+        color: $min-color;
+      }
+      .title {
+        color: $paragraph-color;
+        margin-bottom: 12px;
+        display: block;
+      }
+      .rate {
+        .filled,
+        .far {
+          color: $paragraph-color;
+          transition: $min-transition;
+        }
+      }
+      p {
+        line-height: $min-line-height;
+        color: $paragraph-color;
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+      &:hover {
+        .rate {
+          .filled,
+          .far {
+            color: #ffc107;
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+  }
+}
+/* End Testimonials */

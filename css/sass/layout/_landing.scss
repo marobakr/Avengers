@@ -1,0 +1,68 @@
+/* Start Landing */
+.landing {
+  position: relative;
+  &::before {
+    @include pseudoElement;
+    top: -40px;
+    z-index: -1;
+    transform: skewY(-6deg);
+    transform-origin: top left;
+    background-color: $section-color;
+  }
+  .container {
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    padding-bottom: 120px;
+    @media (max-width: 991px) {
+      display: flex;
+      flex-direction: column;
+    }
+    .title {
+      flex: 1;
+      text-align: center;
+      @media (max-width: 991px) {
+        padding-top: 50px;
+      }
+      h1 {
+        font-size: 40px;
+        margin: 0;
+        letter-spacing: -2px;
+      }
+      p {
+        @media (max-width: 991px) {
+          font-size: 20px;
+        }
+        font-size: 23px;
+        line-height: $min-line-height;
+        margin: 5px 0 0;
+        color: #666;
+        max-width: 500px;
+      }
+    }
+    .img {
+      img {
+        position: relative;
+        width: 600px;
+        max-width: 100%;
+        animation: up-down 5s linear infinite;
+      }
+    }
+  }
+  .go-down {
+    color: $min-color;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: $min-transition;
+    i {
+      animation: bouncingLaing 1.5s infinite;
+    }
+    &:hover {
+      color: #0e4d7e;
+    }
+  }
+}
+
+/* End Landing */

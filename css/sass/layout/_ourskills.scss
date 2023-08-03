@@ -1,0 +1,87 @@
+.ourSkilss {
+  @include main-padding;
+  .container {
+    @extend %container-drid-display;
+    align-items: center;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+    .skill {
+      position: relative;
+      padding-bottom: 10px;
+      h3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+          font-size: 12px;
+          border: 1px solid #ccc;
+          padding: 3px 5px;
+          border-radius: 4px;
+          color: $min-color;
+        }
+      }
+      span.color {
+        width: 100%;
+        height: 20px;
+        background-color: #eee;
+        position: absolute;
+        &::before {
+          @include pseudoElement;
+          width: 80%;
+          background-color: $min-color;
+        }
+      }
+    }
+    .html {
+      span.color {
+        &::before {
+          width: 90%;
+        }
+      }
+    }
+    .sass {
+      span.color {
+        &::before {
+          width: 95%;
+        }
+      }
+    }
+    .javascript {
+      span.color {
+        &::before {
+          width: 85%;
+        }
+      }
+    }
+    .githup {
+      span.color {
+        &::before {
+          width: 80%;
+        }
+      }
+    }
+    .commadline {
+      span.color {
+        &::before {
+          width: 99%;
+        }
+      }
+    }
+    .react {
+      span.color {
+        &::before {
+          width: 70%;
+        }
+      }
+    }
+  }
+}

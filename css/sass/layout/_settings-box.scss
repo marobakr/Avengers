@@ -1,0 +1,67 @@
+/* start SettingsBox */
+.settings-box {
+  position: fixed;
+  left: -200px;
+  top: 0;
+  background-color: white;
+  width: 200px;
+  z-index: 10000;
+  min-height: 100vh;
+  transition: $min-transition;
+  .toggle-setings {
+    position: absolute;
+    right: -30px;
+    top: 100px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    i {
+      padding: 8px 0;
+      width: 30px;
+    }
+  }
+  .setings-container {
+    .option-box {
+      padding: 20px;
+      h4 {
+        margin: 0;
+        color: #666;
+      }
+      .our-colores {
+        text-align: center;
+        padding: 0;
+        li.active {
+          opacity: 1;
+        }
+        li {
+          width: 20px;
+          height: 20px;
+          background-color: red;
+          border-radius: 50%;
+          cursor: pointer;
+          opacity: 0.5;
+          display: inline-block;
+          &:first-child {
+            background-color: $min-color;
+          }
+          &:nth-child(2) {
+            background-color: rgb(71, 71, 31);
+          }
+          &:nth-child(3) {
+            background-color: rgb(0, 89, 255);
+          }
+          &:nth-child(4) {
+            background-color: rgb(255, 0, 0);
+          }
+          &:nth-child(5) {
+            background-color: yellow;
+          }
+        }
+      }
+    }
+  }
+}
+.settings-box.open {
+  left: 0;
+}

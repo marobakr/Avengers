@@ -1,0 +1,69 @@
+/* All Animation */
+@keyframes up-down {
+  0%,
+  100% {
+    top: 0;
+  }
+  50% {
+    top: -50px;
+  }
+}
+@keyframes bouncingLaing {
+  0%,
+  10%,
+  20%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  60% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes left-move {
+  50% {
+    @include animation-main-title-half;
+  }
+  100% {
+    @include animation-main-title-total;
+  }
+}
+@keyframes right-move {
+  50% {
+    @include animation-main-title-half;
+    right: 0;
+    left: auto;
+  }
+  100% {
+    @include animation-main-title-total;
+    right: 0;
+    left: auto;
+  }
+}
+@keyframes moving-arrow {
+  100% {
+    transform: translateX(10px);
+  }
+}
+@keyframes flashing {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+}
+@keyframes change-background {
+  0%,
+  100% {
+    background-image: url(/imgs/discount-background1.jpg);
+  }
+  50% {
+    background-image: url(/imgs/discount-background2.jpg);
+  }
+}
+// you nedd to reafrance keyframes

@@ -1,0 +1,133 @@
+/* Start Headr */
+.headr {
+  background-color: white;
+  position: relative;
+  box-shadow: 0 0 10px #ddd;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    .logo {
+      a {
+        color: $min-color;
+      }
+      @media #{$max-Small} {
+        width: 100%;
+        height: 50px;
+      }
+      font : {
+        size: 26px;
+        weight: bold;
+      }
+      height: 72px;
+      @include flexSystem;
+    }
+    .manu-nav {
+      display: flex;
+      @media #{$max-Small} {
+        margin: auto;
+      }
+      > li {
+        > a {
+          @include flexSystem;
+          height: 72px;
+          position: relative;
+          color: black;
+          padding: 0 30px;
+          transition: $min-transition;
+          overflow: hidden;
+          @media #{$max-Small} {
+            padding: 10px;
+            font-size: 13px;
+            height: 40px;
+          }
+          &::before {
+            @include file-links;
+          }
+          &:hover {
+            @include file-hover;
+            &::before {
+              left: 0;
+            }
+          }
+        }
+      }
+      .mega-menu {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        padding: 30px;
+        background-color: white;
+        border-bottom: 3px solid $min-color;
+        z-index: 100;
+        display: none;
+        gap: 40px;
+        top: calc(100% + 50px);
+        transition: top $min-transition, opacity $min-transition;
+        @media (max-width: 767px) {
+          gap: 0;
+          padding: 4px;
+          flex-wrap: wrap;
+        }
+        .image {
+          @media (max-width: 991px) {
+            display: none;
+          }
+          img {
+            max-width: 100%;
+          }
+        }
+        ul:first-of-type {
+          li:last-child {
+            @media (max-width: 500px) {
+              border-bottom: 1px solid $color-border;
+            }
+          }
+        }
+        .links {
+          min-width: 250px;
+          flex: 1;
+          li {
+            cursor: pointer;
+            position: relative;
+            &:not(:last-child) {
+              border-bottom: 1px solid $color-border;
+            }
+            &::before {
+              @include pseudoElement;
+              z-index: -1;
+              width: 0;
+              background-color: #fafafa;
+              transition: $min-transition;
+            }
+            &:hover {
+              &::before {
+                width: 100%;
+              }
+            }
+            a {
+              color: $min-color;
+              padding: 10px;
+              display: block;
+              height: auto;
+              font : {
+                size: 18px;
+                weight: bold;
+              }
+              i {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .active {
+      display: flex !important;
+    }
+  }
+}
+
+/* End Headr */

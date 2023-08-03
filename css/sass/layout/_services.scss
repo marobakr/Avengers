@@ -1,0 +1,88 @@
+/* Start Services */
+.services {
+  @include main-padding;
+  position: relative;
+  &::before {
+    @include background-color;
+    height: 50%;
+    background-color: $section-color;
+  }
+
+  &::after {
+    content: "";
+    @include background-color;
+    top: 50%;
+    height: 50%;
+    background-color: #677178;
+  }
+  .container {
+    @extend %container-drid-display;
+  }
+  .box {
+    background-color: white;
+    box-shadow: 0 12px 20px 0 #000c1421, 0 2px 4px #0000004a;
+    counter-increment: services;
+    transition: $min-transition;
+    position: relative;
+    &::before {
+      @include pseudoElement;
+      left: 50%;
+      top: -3px;
+      width: 0px;
+      height: 3px;
+      transform: translateX(-50%);
+      background-color: $min-color;
+      transition: $min-transition;
+    }
+    &:hover {
+      transform: translateY(-10px);
+      &::before {
+        width: 100%;
+      }
+    }
+    i {
+      margin: 30px auto 20px;
+      display: block;
+      text-align: center;
+      color: #d5d5d5;
+    }
+    h3 {
+      text-align: center;
+      margin: 10px 0 40px;
+      font-size: 25px;
+      color: $min-color;
+    }
+    .info {
+      padding: 15px;
+      position: relative;
+      background-color: #f6f6f6;
+      text-align: right;
+      a {
+        color: $min-color;
+        font-weight: 700;
+      }
+      &::before {
+        content: "0" counter(services);
+        position: absolute;
+        background-color: $min-color;
+        color: white;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 80px;
+        font-size: 30px;
+        font-weight: bold;
+        @include flexSystem;
+        padding-right: 15px;
+      }
+      &::after {
+        @include pseudoElement;
+        left: 80px;
+        width: 50px;
+        transform: skewX(-30deg);
+        background-color: #d5d5d5;
+      }
+    }
+  }
+}
+/* End Services */
